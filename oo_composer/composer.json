@@ -1,0 +1,16 @@
+{
+    "name": "fgaurat/oo_composer",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Fgaurat\\OoComposer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "eolem",
+            "email": "100517246+eolem@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
