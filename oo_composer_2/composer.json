@@ -11,5 +11,7 @@
             "email": "100517246+eolem@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "monolog/monolog": "^3.9"
+    }
 }
