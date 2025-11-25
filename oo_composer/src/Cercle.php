@@ -6,6 +6,8 @@ namespace Fgaurat\OoComposer;
 
 class Cercle implements CalcGeoInterface{
 
+    use CouleurTrait;
+
     public function __construct(private $rayon){}
 
     public function getRayon(){
