@@ -3,6 +3,7 @@
 
 namespace Fgaurat\OoComposer;
 
+use InvalidArgumentException;
 
 class Cercle implements CalcGeoInterface{
 
@@ -15,6 +16,9 @@ class Cercle implements CalcGeoInterface{
     }
 
     public function setRayon($r){
+        if($r < 0){
+            throw new InvalidArgumentException("Hooooo !");
+        }
         $this->rayon = $r;
     }
 

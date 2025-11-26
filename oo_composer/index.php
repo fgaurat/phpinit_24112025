@@ -23,9 +23,22 @@ echo $c->surface(); //4
 echo "\n";
 echo $c->getCote(); //4 
 echo "\n";
-$ce = new Cercle(3);
-echo $ce->getCouleur();
-echo "\n";
-echo $ce->surface();
-echo "\n";
+try{
+
+    $ce = new Cercle("toto");
+    echo $ce->getRayon();
+    
+    echo "\n";
+    // $ce->setRayon(-3);
+    // echo "\n";
+    echo $ce->getCouleur();
+    echo "\n";
+    echo $ce->surface();
+    echo "\n";
+}
+catch(InvalidArgumentException $e){
+    echo $e."\n";
+}
+
+echo "la suite\n";
 
