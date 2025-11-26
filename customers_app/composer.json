@@ -1,0 +1,15 @@
+{
+    "name": "fgaurat/customers_app",
+    "autoload": {
+        "psr-4": {
+            "Fgaurat\\CustomersApp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "eolem",
+            "email": "100517246+eolem@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
