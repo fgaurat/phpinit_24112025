@@ -11,41 +11,41 @@
 <body>
 
     <div class="container">
-        <form method="post" action="customers/save">
+        <form method="POST" action="save">
 
             <div class="mb-3">
                 <label for="lastName" class="form-label">LastName</label>
-                <input type="text" class="form-control"  id="lastName" aria-describedby="lastNameHelp">
+                <input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="lastNameHelp">
                 <div id="lastNameHelp" class="form-text">Last name</div>
             </div>
 
             <div class="mb-3">
                 <label for="firstName" class="form-label">FirstName</label>
-                <input type="text" class="form-control"  id="firstName" aria-describedby="firstNameHelp">
+                <input type="text" class="form-control" id="firstName" name="firstName" aria-describedby="firstNameHelp">
                 <div id="firstNameHelp" class="form-text">FirstName</div>
             </div>
 
             <div class="mb-3">
                 <label for="ip" class="form-label">ip</label>
-                <input type="text" class="form-control"  id="ip" aria-describedby="ipHelp">
+                <input type="text" class="form-control" id="ip" name="ip" aria-describedby="ipHelp">
                 <div id="ipHelp" class="form-text">ip</div>
             </div>
 
             <div class="mb-3">
                 <label for="firstName" class="form-label">gender</label>
-                <input type="text" class="form-control"  id="gender" aria-describedby="genderHelp">
+                <input type="text" class="form-control" id="gender" name="gender" aria-describedby="genderHelp">
                 <div id="genderHelp" class="form-text">gender</div>
             </div>
 
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
 
 
             <button type="submit" class="btn btn-primary">Submit</button>
-            
+
         </form>
     </div>
 </body>

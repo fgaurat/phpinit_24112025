@@ -5,7 +5,7 @@ namespace Fgaurat\CustomersApp\DTO;
 class Customer{
     //id,firstName,lastName,email,gender,ipAddress
     public function __construct(
-        public int $id,
+        public ?int $id=null,
         public string $firstName,
         public string $lastName,
         public string $email,

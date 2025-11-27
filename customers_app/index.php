@@ -40,7 +40,7 @@ switch($url){
         require_once __DIR__."/views/customers/form.php";
         break;
     case 'customers/save':
-        require_once __DIR__."/views/customers/form.php";
+        $controller->save();
         break;
     default:
         http_response_code(404);

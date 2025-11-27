@@ -14,6 +14,38 @@ class CustomerDAO{
         $this->conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
 
+    public function save(Customer $customer):Customer{
+        if($customer->id == 0) {
+            // Insertion d'un nouveau client
+            $sql = "INSERT INTO customers_tbl (first_name, last_name, email, gender, ip_address) VALUES (?, ?, ?, ?, ?)";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                $customer->firstName,
+                $customer->lastName,
+                $customer->email,
+                $customer->gender,
+                $customer->ipAddress
+            ]);
+            
+            // Récupérer l'ID généré automatiquement
+            $customer->id = $this->conn->lastInsertId();
+        } else {
+            // Mise à jour d'un client existant
+            $sql = "UPDATE customers_tbl SET first_name=?, last_name=?, email=?, gender=?, ip_address=? WHERE id=?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                $customer->firstName,
+                $customer->lastName,
+                $customer->email,
+                $customer->gender,
+                $customer->ipAddress,
+                $customer->id
+            ]);
+        }
+        
+        return $customer;
+    }
+
     public function findAll():array
     {
         $data = [];
