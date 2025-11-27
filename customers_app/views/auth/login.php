@@ -1,13 +1,16 @@
 <?php
 
 
+
+
 $error="";
 if(isset($_POST) && !empty($_POST)){
     $username = $_POST['username'] ??'';
     $password = $_POST['password'] ??'';
 
     if($username === 'admin' && $password==='12345'){
-        echo "ok";
+        $_SESSION['is_auth'] = true;
+        header("Location: /customers_app/customers");
     }
     else $error = "Hooooooooo !";
 }

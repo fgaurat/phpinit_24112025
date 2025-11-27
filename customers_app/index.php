@@ -12,6 +12,10 @@ use Fgaurat\CustomersApp\DAO\CustomerDAO;
 
 session_start();
 
+if(!isset($_SESSION['is_auth'])){
+    require_once __DIR__."/views/auth/login.php";
+}
+
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
