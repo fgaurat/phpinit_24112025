@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+require 'vendor/autoload.php';
 
+use Fgaurat\CustomersApp\Controller\CustomerController;
 use Fgaurat\CustomersApp\DAO\CustomerDAO;
 
-require 'vendor/autoload.php';
 
 $servername = "127.0.0.1";
 $username = "root";
@@ -24,6 +25,17 @@ $dao = new CustomerDAO(
 // foreach ($customers as $customer) {
 //     echo $customer . "\n";
 // }
-echo "<pre>";
-print_r($_GET);
-echo "</pre>";
+
+$url = $_GET['url'] ?? '';
+
+$controller = new CustomerController($dao);
+
+switch($url){
+    case 'customers':
+        $controller->index();
+        break;
+    default:
+        http_response_code(404);
+        echo "<h1>Page non trouvée</h1>";
+        break;
+}
