@@ -36,7 +36,7 @@ $controller = new CustomerController($dao);
 
 switch($url){
     case '':
-        require_once __DIR__."/views/home/index.php";
+        require_once __DIR__."/views/auth/login.php";
         break; 
     case 'customers':
         $controller->index();
