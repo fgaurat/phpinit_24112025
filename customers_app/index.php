@@ -27,12 +27,20 @@ $dao = new CustomerDAO(
 // }
 
 $url = $_GET['url'] ?? '';
-
 $controller = new CustomerController($dao);
 
 switch($url){
+    case '':
+        require_once __DIR__."/views/home/index.php";
+        break; 
     case 'customers':
         $controller->index();
+        break;
+    case 'customers/form':
+        require_once __DIR__."/views/customers/form.php";
+        break;
+    case 'customers/save':
+        require_once __DIR__."/views/customers/form.php";
         break;
     default:
         http_response_code(404);
