@@ -31,6 +31,9 @@ class CustomerController{
         );
 
         $this->customerDAO->save($c);
+        $_SESSION['success'] = "Customer ajouté avec succès !";
+
+        
         // header("Location: /customers",true,301);
         header("Location: /customers_app/customers");
     }

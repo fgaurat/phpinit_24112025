@@ -10,9 +10,18 @@
 
 <body>
     <div class="container">
-<pre>
-    <?php print_r($_SESSION);?>
-</pre>
+<?php if( isset($_SESSION['success'])):?>
+<div class="alert alert-success">
+    <?=   $_SESSION['success']?>
+</div>
+
+<?php
+ unset($_SESSION['success']) 
+ 
+ ?>
+
+<?php endif?>
+
         <table class="table table-hover table-striped">
             <thead>
 

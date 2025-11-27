@@ -12,7 +12,6 @@ use Fgaurat\CustomersApp\DAO\CustomerDAO;
 
 session_start();
 
-$_SESSION['hello'] = "world";
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
