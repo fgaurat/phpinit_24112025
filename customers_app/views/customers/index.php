@@ -10,7 +10,9 @@
 
 <body>
     <div class="container">
-
+<pre>
+    <?php print_r($_SESSION);?>
+</pre>
         <table class="table table-hover table-striped">
             <thead>
 

@@ -26,10 +26,13 @@ class CustomerController{
             lastName:$_POST['lastName'],
             email:$_POST['email'],
             gender:$_POST['gender'],
-            ipAddress:$_POST['ipAddress']
+            ipAddress:$_POST['ip'],
+            id:null
         );
 
         $this->customerDAO->save($c);
+        // header("Location: /customers",true,301);
+        header("Location: /customers_app/customers");
     }
 
 

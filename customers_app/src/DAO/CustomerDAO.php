@@ -55,12 +55,12 @@ class CustomerDAO{
         $customers = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         foreach ($customers as $customer) {
             $c = new Customer(
-                $customer['id'],
                 $customer['first_name'],
                 $customer['last_name'],
                 $customer['email'],
                 $customer['gender'],
-                $customer['ip_address']
+                $customer['ip_address'],
+                $customer['id']
             );
             $data[] = $c;
         }

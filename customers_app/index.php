@@ -1,12 +1,18 @@
 <?php
 
 declare(strict_types=1);
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
 require 'vendor/autoload.php';
 
 use Fgaurat\CustomersApp\Controller\CustomerController;
 use Fgaurat\CustomersApp\DAO\CustomerDAO;
 
 
+session_start();
+
+$_SESSION['hello'] = "world";
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
