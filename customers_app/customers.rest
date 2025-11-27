@@ -1,0 +1,10 @@
+GET http://localhost/customers_app/api/customers
+
+###
+
+POST http://localhost/customers_app/api/customers
+Content-type: application/json
+
+{
+    ""
+}

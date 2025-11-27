@@ -6,15 +6,16 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 require 'vendor/autoload.php';
 
+use Fgaurat\CustomersApp\Controller\CustomerApiController;
 use Fgaurat\CustomersApp\Controller\CustomerController;
 use Fgaurat\CustomersApp\DAO\CustomerDAO;
 
 
 session_start();
 
-if(!isset($_SESSION['is_auth'])){
-    require_once __DIR__."/views/auth/login.php";
-}
+// if(!isset($_SESSION['is_auth'])){
+//     require_once __DIR__."/views/auth/login.php";
+// }
 
 $servername = "127.0.0.1";
 $username = "root";
@@ -37,6 +38,7 @@ $dao = new CustomerDAO(
 
 $url = $_GET['url'] ?? '';
 $controller = new CustomerController($dao);
+$controllerApi = new CustomerApiController($dao);
 
 switch($url){
     case '':
@@ -44,6 +46,9 @@ switch($url){
         break; 
     case 'customers':
         $controller->index();
+        break;
+    case 'api/customers':
+        $controllerApi->index();
         break;
     case 'customers/form':
         require_once __DIR__."/views/customers/form.php";

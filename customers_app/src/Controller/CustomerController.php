@@ -21,6 +21,7 @@ class CustomerController{
     }
     
     public function save(){
+        
         $c = new Customer(
             firstName:$_POST['firstName'],
             lastName:$_POST['lastName'],
